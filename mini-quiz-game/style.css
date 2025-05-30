@@ -1,0 +1,258 @@
+* {
+ box-sizing: border-box;
+}
+
+body {
+ margin: 0;
+ padding: 0;
+ overflow-x: hidden;
+ font-family: 'Times New Roman', Times, serif;
+}
+
+.main {
+ background: url('image.jpg') no-repeat center center fixed;
+ background-size: cover;
+ height: 100vh;
+ width: 100vw;
+ margin: 0;
+ padding: 0;
+}
+
+main.active {
+     filter: blur(15px);
+}
+
+.container {
+ display: flex;
+ height: 100vh;
+ width: 200%;
+}
+
+.home {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     width: 100%;
+     position: relative;
+}
+
+.home-content {
+ text-align: center;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+
+.home-content h1 {
+ font-size: 80px;
+ color: rgb(17, 2, 43);
+ text-shadow: 0 0 10px black;
+}
+
+.home-content p {
+ font-size: 20px;
+ text-align: center;
+ text-shadow: 0 0 10px rgb(36, 35, 35);
+ margin-bottom: 30px;
+}
+
+.home-content .start-btn {
+ width: 190px;
+ height: 55px;
+ background: rgb(55, 3, 104);
+ border: 2px solid rgb(240, 124, 240);
+ outline: none;
+ border-radius: 5px;
+ box-shadow: 0 0 10px black;
+ font-size: 15px;
+ color: white;
+ letter-spacing: 1px;
+ cursor: pointer;
+}
+
+.home-content .start-btn:hover {
+ background: black;
+box-shadow: none;
+}
+
+.popup-info {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) scale(.9);
+ width: 500px;
+ background: rgb(241, 203, 234);
+ border-radius: 6px;
+ padding: 10px 25px;
+ opacity: 0;
+ pointer-events: none;
+ transition: .3s ease;
+}
+
+.popup-info.active {
+ opacity: 1;
+ pointer-events: auto;
+ transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-info h2 {
+ font-size: 33px;
+ color: rgb(73, 4, 105);
+}
+
+.popup-info .info {
+ display: inline-block;
+ font-size: 17px;
+ color: rgb(59, 59, 57);
+ margin: 4px 0;
+}
+
+.popup-info .btn-group {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-top: 1px solid gray;
+ margin-top: 10px;
+padding: 15px 0 7px;
+}
+
+.popup-info .btn-group .info-btn {
+ display: inline-flex;
+ justify-content: center;
+ align-items: center;
+ width: 130px;
+ height: 45px;
+ background: rgb(233, 104, 233);
+ border: 1px solid rgb(243, 58, 181);
+ outline: none;
+ border-radius: 6px;
+ text-decoration: none;
+ font-size: 16px;
+ color: aliceblue;
+ font-weight: 600;
+ box-shadow: 0 0 10px black;
+ cursor: pointer;
+}
+
+.popup-info .btn-group .info-btn:nth-child(1) {
+ background: transparent;
+ color: darkorchid;
+}
+
+.popup-info .btn-group .info-btn:nth-child(1):hover {
+ background: rgb(228, 51, 160);
+ color: white;
+}
+
+.popup-info .btn-group .info-btn:nth-child(2):hover {
+ background: rgb(235, 59, 147);
+}
+
+.quiz-container {
+ background-color: rgb(232, 238, 238);
+ border-radius: 20px;
+ box-shadow: 0 0 10px 2px black;
+ width: 90vw;
+ max-width: 660px;
+ overflow: hidden;
+ padding: 2rem 1rem;
+ margin: auto;
+}
+
+.quiz-header {
+padding: 4rem;
+}
+
+h2 {
+ padding: 1rem;
+ text-align: center;
+ margin: 0;
+}
+
+ul {
+ list-style-type: none;
+ padding: 0;
+}
+
+ul li {
+     font-size: 1.2rem;
+ margin: 1rem 0;
+}
+
+ul li label {
+ cursor: pointer;
+}
+
+button {
+     background-color: rgb(120, 69, 214);
+     color: azure;
+     border: none;
+     display: block;
+     width: 100%;
+     cursor: pointer;
+     font-size: 1.1rem;
+     padding: 1.3rem;
+}
+
+button:hover {
+ background-color: rgb(43, 6, 110);
+ color: rgb(233, 240, 241);
+}
+
+button:focus {
+ outline: none;
+ background-color: rgba(228, 86, 221, 0.842);
+}
+
+#score-container,
+#recommendation-container,
+#recommendation-options,
+#problem-options,
+#solution-container {
+ display: none;
+}
+
+
+@media (max-width: 768px) {
+ .home-content h1 {
+ font-size: 40px;
+ }
+
+ .home-content p {
+ font-size: 16px;
+ padding: 0 10px;
+ }
+
+ .popup-info {
+ width: 90%;
+ padding: 10px 15px;
+ }
+
+ .popup-info h2 {
+ font-size: 24px;
+ }
+
+.popup-info .info {
+ font-size: 14px;
+ }
+
+ .popup-info .btn-group {
+ flex-direction: column;
+ gap: 10px;
+ }
+
+ .popup-info .info-btn {
+ width: 100%;
+ }
+
+ .quiz-header {
+ padding: 2rem 1rem;
+ }
+
+ button {
+ font-size: 1rem;
+ padding: 1rem;
+}
+}
